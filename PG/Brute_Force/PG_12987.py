@@ -8,5 +8,6 @@ def solution(A, B):
             answer+=1
             idx-=1
     return answer
-print(solution([5, 1, 3, 7], [2, 6, 8, 2]))
-print(solution([2, 2, 2, 2], [1, 1, 1, 1]))
+
+#print(solution([5, 1, 3, 7], [2, 6, 8, 2]))
+#print(solution([2, 2, 2, 2], [1, 1, 1, 1]))
