@@ -1,14 +1,22 @@
 def solution(priorities, location):
-    answer=0
-    locations=[]
-    idx=0
+    answer = 1
+    idx = 0
 
-    if len(locations) <len(priorities) :
-        for i in range(idx+1, len(priorities)) :
-            if priorities[idx]<priorities[i] and i not in locations :
-                locations.append(i)
-                idx=i
-
+    while (idx <= location):
+        change = False
+        for i in range(idx + 1, len(priorities)):
+            if (priorities[idx] < priorities[i]):
+                priorities.append(priorities.pop(idx))
+                if location == idx:
+                    location = len(priorities) - 1
+                else:
+                    location -= 1
+                change = True
+                break
+        if not change:
+            if idx == location:
+                return answer
+            else:
+                idx += 1
+                answer += 1
     return answer
-print(solution([2, 1, 3, 2], 2))
-print(solution([1, 1, 9, 1, 1, 1], 0))
